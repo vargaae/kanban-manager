@@ -1,14 +1,14 @@
 {
   "targets": {
-    "kanban-manager": {
+    "kanban-fire-workshop-f3fa2": {
       "hosting": {
         "kanban-manager": [
-          "kanban-manager"
+          "kanban-fire-workshop-f3fa2"
         ]
       }
     }
   },
   "projects": {
-    "default": "kanban-manager"
+    "default": "kanban-fire-workshop-f3fa2"
   }
 }
