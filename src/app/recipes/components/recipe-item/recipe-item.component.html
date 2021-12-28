@@ -1,0 +1,21 @@
+<ng-container *ngFor="let recipe of recipes">
+  <a
+    [routerLink]="['/recipes/', recipe.id]"
+    routerLinkActive="active"
+    class="list-group-item clearfix"
+  >
+    <div class="pull-left">
+      <h4 class="list-group-item-heading">{{ recipe.name }}</h4>
+      <span class="description">{{ recipe.description }}</span>
+    </div>
+    <span class="pull-right">
+      <img
+        [src]="recipe.imagePath"
+        alt="{{ recipe.name }}"
+        class="img-fluid"
+        style="max-height: 50px"
+      />
+    </span>
+    {{ recipe.lastUpdate | date }}
+  </a>
+</ng-container>

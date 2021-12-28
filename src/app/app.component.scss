@@ -1,0 +1,24 @@
+/* ANDRAS VARGA's GASTRO APPLICATION DESIGN */
+
+/*
+===============
+Fonts
+===============
+*/
+
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans");
+@import url("https://fonts.googleapis.com/css2?family=Cormorant:wght@500");
+
+/* GENERAL STYLES */
+
+
+* {
+  margin-top: 0;
+  padding-top: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}

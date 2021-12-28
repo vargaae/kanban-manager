@@ -1,0 +1,106 @@
+/* ANDRAS VARGA's GASTRO APPLICATION DESIGN */
+
+/*
+===============
+Fonts
+===============
+*/
+
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans");
+@import url("https://fonts.googleapis.com/css2?family=Cormorant:wght@500");
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lekton:wght@700&display=swap');
+
+$primary-color: grey;
+
+
+/* GENERAL STYLES */
+
+a, p, h4, .mat-button {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+}
+
+$breakpoint-xsreswidth: 500px;
+@media (max-width: $breakpoint-xsreswidth) {
+  a, p, h4, .mat-button, .nav-link {
+    font-size: 0.6rem;
+  }
+  img {
+    height: 25px;
+  }
+}
+$breakpoint-smreswidth: 640px;
+@media (min-width: $breakpoint-smreswidth) {
+  a, p, h4, .mat-button, .nav-link {
+    font-size: 1rem;
+  }
+}
+
+h4 {
+  margin-top: 0.5rem;
+}
+
+/* BUTTON, DROPDOWN STYLES */
+
+#myBtn {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+  z-index: 99;
+  border: none;
+  outline: none;
+  opacity: 0.4;
+  background-color: $primary-color;
+  color: white;
+  cursor: pointer;
+  padding: 0.3rem;
+  border-radius: 10px;
+}
+
+#myBtn:hover {
+  background-color: #555;
+  opacity: 1;
+  filter: sepia();
+}
+
+.mat-icon#topBtn {
+  fill: currentColor;
+  height: 3rem;
+  width: 3rem;
+}
+.material-icons#topBtn {
+  font-size: 3rem;
+  line-height: 1;
+}
+
+.dropdown-menu-right {
+  top: 55px;
+  right: 0 !important;
+  left: auto !important;
+}
+
+.nav-link.dropdown-toggle {
+color: transparent;
+}
+.nav-link.dropdown-toggle:hover {
+color: transparent;
+font-weight: 900;
+}
+#profilebtn {
+color: black;
+font-weight: 700;
+}
+
+.dropdown-item {
+  text-align: right;
+}
+
+.profile-card {
+  width: 16rem;
+  height: 13rem;
+  margin-top: 0.5rem;
+  padding-right: 0.5rem;
+  text-align: right;
+}

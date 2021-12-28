@@ -1,0 +1,77 @@
+<div class="row">
+  <div ngbDropdown class="dropdown">
+    <button
+      mat-raised-button
+      color="accent"
+      ngbDropdownToggle
+      class="nav-link dropdown-toggle"
+      data-bs-toggle="dropdown"
+      role="button"
+      aria-expanded="false"
+    >
+      Manage Recipe
+    </button>
+    <ul ngbDropdownMenu class="dropdown-menu dropdown-menu-light">
+      <ng-container>
+        <li>
+          <a
+            ngbDropdownItem
+            class="dropdown-item"
+            (click)="onAddRecipesToShoppingList()"
+            >Add Recipe's Ingredients To the Shopping List</a
+          >
+        </li>
+      </ng-container>
+      <li><hr class="dropdown-divider" /></li>
+      <li>
+        <a ngbDropdownItem class="dropdown-item" (click)="onEditRecipe()"
+          >Edit Recipe</a
+        >
+      </li>
+    </ul>
+  </div>
+</div>
+<hr />
+<div class="row">
+  <div class="col">
+    <img
+      [src]="recipe.imagePath"
+      alt="{{ recipe.name }}"
+      class="img-fluid"
+    />
+  </div>
+</div>
+<div class="row">
+  <div class="col">
+    <h1>{{ recipe.name }}</h1>
+  </div>
+</div>
+<div class="row">
+  <div class="col"></div>
+</div>
+<div class="row">
+  <div class="col">
+    <strong>Description</strong><br />
+      <mat-card>
+    {{ recipe.description }}
+    </mat-card>
+    <br /><br />
+    <strong>Preparation</strong><br />
+    <mat-card class="justified">
+        {{ recipe.preparation }}
+      </mat-card>
+    <br />
+  </div>
+</div>
+<div class="row">
+  <div class="col">
+    <strong>Ingredients</strong><br />
+    <mat-card><mat-selection-list #ingredients [multiple]="false">
+      <mat-list-option *ngFor="let ingredient of recipe.ingredients" style="cursor: default;">
+        {{ ingredient.amount }} {{ ingredient.measure }} of
+        {{ ingredient.name }}
+      </mat-list-option>
+    </mat-selection-list></mat-card>
+  </div>
+</div>
+<hr>

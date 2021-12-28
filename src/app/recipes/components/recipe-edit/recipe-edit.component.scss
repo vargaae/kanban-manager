@@ -1,0 +1,61 @@
+/* ANDRAS VARGA's GASTRO APPLICATION DESIGN */
+
+/*
+===============
+Fonts
+===============
+*/
+
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans");
+@import url("https://fonts.googleapis.com/css2?family=Cormorant:wght@500");
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lekton:wght@700&display=swap');
+
+$primary-color: grey;
+$primary-color-hover: #34623F;
+
+
+/* GENERAL STYLES */
+
+a, p, h4, .mat-button, .mat-raised-button {
+  font-family: 'Montserrat', sans-serif;
+}
+.ingredients {
+  font-family: 'Lekton', sans-serif;
+}
+
+#ingredientrow input:hover {
+  background-color: #FFFBE6;
+}
+#ingredientrow select:hover {
+  background-color: #FFFBE6;
+}
+#ingredientrow:hover {
+  background-color: bisque;
+}
+
+h4 {
+  margin-top: 0.5rem;
+}
+
+input.ng-invalid.ng-touched,
+textarea.ng-invalid.ng-touched {
+  border: 1px solid red;
+}
+
+.mat-raised-button {
+  margin: 0.3rem;
+}
+
+#amountFloatingInputGrid {
+  min-width: 4rem;
+}
+
+#nameFloatingInputGrid {
+  min-width: 8.5rem;
+}
+
+#removeingbtn {
+height: 3.5rem;
+line-height: 3.5;
+}

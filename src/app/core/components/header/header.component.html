@@ -1,0 +1,92 @@
+<nav class="navbar navbar-expand fixed-top navbar-light bg-light">
+  <div class="container-fluid">
+    <button mat-icon-button class="navbar-brand" routerLink="/">
+      <img src="../../../../assets/images/favicon.ico" alt="" height="30" class="d-inline-block align-text-top">
+    </button>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <button mat-button routerLink="/recipes">
+            <a routerLinkActive="active" class="nav-link" aria-current="page"
+              >Recipe Book</a
+            >
+          </button>
+        </li>
+        <li class="nav-item">
+          <button mat-button>
+            <a
+              routerLink="/shopping-list"
+              routerLinkActive="active"
+              class="nav-link"
+              >Shopping List</a
+            >
+          </button>
+        </li>
+      </ul>
+      <ul class="navbar-nav navbar-right">
+        <li ngbDropdown class="dropdown" *ngIf="appUser; else anonymousUser">
+          <a ngbDropdownToggle
+          class="nav-link dropdown-toggle"
+          data-bs-toggle="dropdown"
+          role="menu"><button mat-button id="profilebtn">
+            <span>{{ appUser.name }}</span>
+          </button>
+          <button
+            mat-mini-fab
+            style="background-image: url('{{ appUser.photoURL }}'); background-size: cover;"
+            class="avatar-button"
+            aria-expanded="false"
+          ></button></a>
+            <ul ngbDropdownMenu class="dropdown-menu dropdown-menu-right">
+            <ng-container>
+              <li>
+                <div class="profile-card">
+              <img
+                *ngIf="appUser.photoURL"
+                [alt]="appUser.name"
+                [src]="appUser.photoURL"
+                class="big-avatar"
+              />
+              <h4>{{ appUser.name }}</h4>
+              <p>{{ appUser.email }}</p>
+              <p class="profile-footer">Signed In User of GastroApp</p>
+            </div>
+              </li>
+            </ng-container>
+            <li><hr class="dropdown-divider" /></li>
+            <li>
+              <a
+                  ngbDropdownItem
+                  class="dropdown-item"
+                  (click)="logout()">
+                  <strong>Log Out</strong></a
+                >
+            </li>
+          </ul>
+        </li>
+        <ng-template #anonymousUser>
+          <li class="nav-item">
+            <button mat-button class="nav-link" routerLink="/login">
+              <strong>Login</strong>
+            </button>
+          </li>
+        </ng-template>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<button mat-raised-button (click)="topFunction()" id="myBtn" title="Go to top">
+  <mat-icon id="topBtn">present_to_all</mat-icon>
+</button>

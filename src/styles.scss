@@ -1,0 +1,82 @@
+/* Importing Bootstrap SCSS file. */
+@import '~bootstrap/scss/bootstrap';
+
+/* ANDRAS VARGA's GASTRO APPLICATION DESIGN */
+
+/*
+===============
+Fonts
+===============
+*/
+
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans");
+@import url("https://fonts.googleapis.com/css2?family=Cormorant:wght@500");
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lekton:wght@700&display=swap');
+
+
+html, body { height: 100%; }
+body { margin: 0; padding-top: 7rem; font-family: Montserrat, "Helvetica Neue", sans-serif; }
+
+$primary-color: #69995D;
+$primary-color-hover: #AFAFAF;
+
+$thumbnail-padding:                 0.05rem;
+$thumbnail-bg:                      $body-bg;
+$thumbnail-border-width:            $border-width;
+$thumbnail-border-color:            $gray-300;
+$thumbnail-border-radius:           $border-radius;
+$thumbnail-box-shadow:              $box-shadow-sm;
+
+body::-webkit-scrollbar {
+  width: 0.5rem;
+}
+body::-webkit-scrollbar-track {
+  background: #1e1e24;
+}
+body::-webkit-scrollbar-thumb {
+  background: $primary-color;
+}
+
+a {
+  cursor: pointer;
+}
+
+h1, h2, h3 {
+  margin-bottom: 1.5rem;
+}
+
+nav {
+  box-shadow: 0 0 1.5rem rgb(0 0 0 / 52%);
+  border-bottom: 1px solid #B9E4C9;
+}
+
+.navbar-light .navbar-brand {
+  color: $primary-color;
+}
+
+.navbar-light .navbar-brand:focus, .navbar-light .navbar-brand:hover {
+  color: $primary-color-hover;
+}
+
+.form-control:focus {
+  border-color: $primary-color;
+}
+
+.list-group-item {
+  position: relative;
+  display: block;
+  padding: 0.5rem 1rem;
+  color: #212529;
+  text-decoration: none;
+  background-color: #FFFBE6;
+  border: 1px solid rgba(0, 0, 0, 0.125);
+}
+
+.mat-raised-button {
+  margin: 0.3rem;
+}
+.mat-raised-button:hover {
+  color: white;
+  background-color: $primary-color-hover;
+}

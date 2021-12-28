@@ -1,0 +1,128 @@
+/* ANDRAS VARGA's GASTRO APPLICATION DESIGN */
+
+/*
+===============
+Fonts
+===============
+*/
+
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans");
+@import url("https://fonts.googleapis.com/css2?family=Cormorant:wght@500");
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lekton:wght@700&display=swap');
+
+/* GENERAL STYLES */
+
+h2, h3 {
+  font-family: 'Montserrat', sans-serif;
+  line-height: 1.5;
+}
+
+a {
+  text-decoration: none;
+  color: #356859;
+}
+
+/* WELCOME PICTURE */
+
+.opener {
+  text-align: center;
+  // height: 65vh;
+}
+
+.img-fluid {
+  align-self: center;
+  max-height: 17rem;
+  border-radius: 10%;
+  margin: 1.3rem;
+}
+
+$breakpoint-tablet: 768px;
+@media (min-width: $breakpoint-tablet) {
+  .opener {
+    text-align: center;
+    // height: 90vh;
+  }
+
+  .img-fluid {
+    max-width: 30rem;
+  }
+}
+@media (min-height: $breakpoint-tablet) {
+  .opener {
+    text-align: center;
+    // height: 90vh;
+  }
+
+  .img-fluid {
+    max-height: 30rem;
+  }
+}
+$breakpoint-smreswidth: 640px;
+$breakpoint-smresheight: 480px;
+@media (min-width: $breakpoint-smreswidth) {
+  .opener {
+    text-align: center;
+    // height: 90vh;
+  }
+
+  .img-fluid {
+    max-width: 20rem;
+  }
+}
+@media (min-height: $breakpoint-smresheight) {
+  .opener {
+    text-align: center;
+    // height: 90vh;
+  }
+
+  .img-fluid {
+    max-height: 20rem;
+  }
+}
+$breakpoint-smreswidth: 800px;
+$breakpoint-smresheight: 600px;
+@media (min-width: $breakpoint-smreswidth) {
+  .opener {
+    text-align: center;
+    // height: 90vh;
+  }
+
+  .img-fluid {
+    max-width: 30rem;
+  }
+}
+@media (min-height: $breakpoint-smresheight) {
+  .opener {
+    text-align: center;
+    // height: 90vh;
+  }
+
+  .img-fluid {
+    max-height: 30rem;
+  }
+}
+
+/* APPLICATION MAP */
+
+.mat-list-option, .mat-list-item {
+  color: #356859;
+  background-color: #FFFBE6;
+  font-family: 'Lekton', sans-serif;
+  text-decoration: none;
+}
+.mat-list-option:hover {
+  color: #356859;
+  background-color: white;
+  font-family: 'Lekton', sans-serif;
+  cursor: default;
+}
+
+.mat-list-icon {
+  color: #666;
+  filter: sepia();
+}
+
+.mat-list-base {
+  padding-top: 0px;
+}

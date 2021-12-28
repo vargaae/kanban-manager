@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "kanban-manager": {
+      "hosting": {
+        "kanban-manager": [
+          "kanban-manager"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "kanban-manager"
+  }
+}

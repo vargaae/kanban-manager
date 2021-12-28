@@ -1,0 +1,139 @@
+/* ANDRAS VARGA's GASTRO APPLICATION DESIGN */
+
+/*
+===============
+Fonts
+===============
+*/
+
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans");
+@import url("https://fonts.googleapis.com/css2?family=Cormorant:wght@500");
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lekton:wght@700&display=swap');
+
+/* GENERAL STYLES */
+
+
+.container {
+  background-color: #FFFBE6;
+  border-radius: 0.5rem;
+  /* font-family: 'Cormorant', serif; */
+  /* font-family: 'Montserrat', sans-serif; */
+}
+
+h3 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+}
+
+#recipe {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.6rem;
+  font-weight: 600;
+  background-color: #b9e4c9d2;
+  padding-left: 0;
+}
+#recipebtn {
+  background-color: #b9e4c9d2;
+  padding-left: 0;
+  border-radius: 0px 4px 4px 0px;
+}
+#reciperemovebtn {
+  height: 3.4rem;
+  float: right;
+}
+
+
+.ingredients {
+  font-family: 'Lekton', sans-serif;
+}
+
+.shopping-list-item-amount {
+  width: 6rem;
+}
+
+.shopping-list-item-unit {
+  width: 6rem;
+}
+
+.shopping-list-item-name {
+  min-width: 17rem;
+  margin-left: 0.5rem;
+}
+
+.mat-raised-button {
+  font-family: 'Montserrat', sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: #356859;
+}
+
+// .row {
+//   max-width: 47rem;
+// }
+
+.mat-list-option {
+  // position: relative;
+  // display: block;
+  // padding: 0.5rem 1rem;
+  color: #356859;
+  // text-decoration: none;
+  // background-color: #FFFBE6;
+  // border: 1px solid #37966F;
+  font-family: 'Lekton', sans-serif;
+}
+
+.mat-list-icon {
+  color: #356859;
+  background-color: transparent;
+}
+.mat-raised-button {
+  margin: 0.3rem;
+}
+
+$breakpoint-tablet: 768px;
+@media (min-width: $breakpoint-tablet) {
+  .mat-list-option {
+    // position: relative;
+    // display: block;
+    // padding: 0.5rem 1rem;
+    color: #356859;
+    // text-decoration: none;
+    // background-color: #FFFBE6;
+    // border: 1px solid #37966F;
+    font-family: 'Lekton', sans-serif;
+  }
+
+  .mat-list-icon {
+    color: #356859;
+    background-color: transparent;
+  }
+  .mat-raised-button {
+    margin: 0.3rem;
+  }
+}
+
+@media print {
+  .printit {display: table-header-group;}
+  .printit {display: table-footer-group;}
+
+  #recipe {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    padding-left: 0;
+  }
+  img {
+    height: 50px;
+  }
+
+  .mat-list-option {
+    font-size: 0.8rem;
+  }
+
+  .header, form, button {display: none;}
+
+  body {margin: 0;}
+}
