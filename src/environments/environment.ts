@@ -4,14 +4,15 @@
 
 export const environment = {
   production: false,
-  firebase : {
-    apiKey: "AIzaSyAkeJvZJH2se05bbea5vMvG3uAUPjsMvUg",
-    authDomain: "gastroapplication.firebaseapp.com",
-    databaseURL: "https://gastroapplication-default-rtdb.firebaseio.com",
-    projectId: "gastroapplication",
-    storageBucket: "gastroapplication.appspot.com",
-    messagingSenderId: "54739302672",
-    appId: "1:54739302672:web:8602d0d707876f70368d95"
+  firebase: {
+    apiKey: "AIzaSyCPeGZRIMbfy0x9OSu2OxL889DjI3klj1o",
+    authDomain: "kanban-fire-workshop-f3fa2.firebaseapp.com",
+    databaseURL: "https://kanban-fire-workshop-f3fa2-default-rtdb.firebaseio.com",
+    projectId: "kanban-fire-workshop-f3fa2",
+    storageBucket: "kanban-fire-workshop-f3fa2.appspot.com",
+    messagingSenderId: "603969216484",
+    appId: "1:603969216484:web:37476f0084138bf7a2b1f1",
+    measurementId: "G-XDW1D1QPB9"
   }
 };
 

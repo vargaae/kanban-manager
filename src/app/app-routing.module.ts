@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 
 import { HomeComponent } from './core/components/home/home.component';
+import { NotFoundComponent } from './shared/components/not-found/not-found.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -11,18 +12,24 @@ const routes: Routes = [
       import('./recipes/recipes.module').then((value) => value.RecipesModule),
   },
   {
-    path: 'shopping-list',
+    path: 'developers',
+    loadChildren: () =>
+      import('./developers/developers.module').then((value) => value.DevelopersModule),
+  },
+  {
+    path: 'notepad',
     loadChildren: () =>
       import('./shopping-list/shopping-list.module').then(
         (value) => value.ShoppingListModule
       ),
   },
+  { path: 'kanban-board', loadChildren: () => import('./board/board.module').then(m => m.BoardModule) },
   {
     path: 'login',
     loadChildren: () =>
       import('./auth/auth.module').then((value) => value.AuthModule),
   },
-  { path: '**', component: HomeComponent },
+  { path: '404', component: NotFoundComponent },
 ];
 
 @NgModule({

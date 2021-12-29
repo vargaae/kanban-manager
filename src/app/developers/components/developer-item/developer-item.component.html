@@ -1,0 +1,21 @@
+<ng-container *ngFor="let developer of developers">
+  <a
+    [routerLink]="['/developers/', developer.id]"
+    routerLinkActive="active"
+    class="list-group-item clearfix"
+  >
+    <div class="pull-left">
+      <h4 class="list-group-item-heading">{{ developer.name }}</h4>
+      <span class="description">{{ developer.description }}</span>
+    </div>
+    <span class="pull-right">
+      <img
+        [src]="developer.imagePath"
+        alt="{{ developer.name }}"
+        class="img-fluid"
+        style="max-height: 50px"
+      />
+    </span>
+    {{ developer.lastUpdate | date }}
+  </a>
+</ng-container>

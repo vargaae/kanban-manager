@@ -29,6 +29,10 @@ Fonts
   text-align: justify;
 }
 
+.img-fluid {
+  height: 25rem;
+}
+
 $breakpoint-smresheight: 480px;
 @media (max-height: $breakpoint-smresheight) {
   .img-fluid {

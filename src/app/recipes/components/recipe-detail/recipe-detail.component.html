@@ -9,7 +9,7 @@
       role="button"
       aria-expanded="false"
     >
-      Manage Recipe
+      Manage Project
     </button>
     <ul ngbDropdownMenu class="dropdown-menu dropdown-menu-light">
       <ng-container>
@@ -18,14 +18,14 @@
             ngbDropdownItem
             class="dropdown-item"
             (click)="onAddRecipesToShoppingList()"
-            >Add Recipe's Ingredients To the Shopping List</a
+            >Add Project's Details To the NotePad</a
           >
         </li>
       </ng-container>
       <li><hr class="dropdown-divider" /></li>
       <li>
         <a ngbDropdownItem class="dropdown-item" (click)="onEditRecipe()"
-          >Edit Recipe</a
+          >Edit Project</a
         >
       </li>
     </ul>
@@ -56,7 +56,7 @@
     {{ recipe.description }}
     </mat-card>
     <br /><br />
-    <strong>Preparation</strong><br />
+    <strong>Tasks</strong><br />
     <mat-card class="justified">
         {{ recipe.preparation }}
       </mat-card>
@@ -65,7 +65,7 @@
 </div>
 <div class="row">
   <div class="col">
-    <strong>Ingredients</strong><br />
+    <strong>Details</strong><br />
     <mat-card><mat-selection-list #ingredients [multiple]="false">
       <mat-list-option *ngFor="let ingredient of recipe.ingredients" style="cursor: default;">
         {{ ingredient.amount }} {{ ingredient.measure }} of

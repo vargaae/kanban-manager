@@ -2,7 +2,7 @@
 <div class="row">
   <div class="col-12">
     <hr />
-    <h3 class="printit">Shopping List
+    <h3 class="printit">NotePad
       <button mat-button type="button" onClick="window.print()" style="float: right;">
         <mat-icon>print</mat-icon>
       </button>
@@ -13,7 +13,7 @@
       (ngSubmit)="onSubmitIngredient(f.value)"
       class="shopping-list-form"
     >
-      <mat-form-field class="shopping-list-item-amount" appearance="outline">
+      <!-- <mat-form-field class="shopping-list-item-amount" appearance="outline">
         <mat-label for="amount">Amount</mat-label>
         <input
           matInput
@@ -36,9 +36,9 @@
             {{ amount.errors?.minlength.requiredLength }} characters.</mat-error
           >
         </mat-error>
-      </mat-form-field>
+      </mat-form-field> -->
       <mat-form-field class="shopping-list-item-unit" appearance="outline">
-        <mat-label>Unit</mat-label>
+        <mat-label>Type of Task</mat-label>
         <mat-select
           [(ngModel)]="ingredient.measure"
           name="measure"
@@ -63,13 +63,13 @@
           type="text"
           placeholder="Ingredient's name"
         />
-        <mat-label for="name">Ingredient</mat-label>
+        <mat-label for="name">Task</mat-label>
         <mat-error *ngIf="name.touched && !name.valid">
           <mat-error *ngIf="name.errors?.required"
-            >Ingredient's name is required.</mat-error
+            >Task's name is required.</mat-error
           >
           <mat-error *ngIf="name.errors?.minlength"
-            >Ingredient's name should be minimum
+            >Task's name should be minimum
             {{ name.errors?.minlength.requiredLength }} characters.</mat-error
           >
         </mat-error>
@@ -107,7 +107,7 @@
   </ng-container>
   <ng-container *ngIf="recipes.length">
       <hr />
-    <h3>Chosen Recipes</h3>
+    <h3>Chosen Projects</h3>
     <hr />
     <div *ngFor="let recipe of recipes" class="row">
           <div class="col-10" id="recipe">
@@ -117,14 +117,14 @@
               class="img-fluid"
               style="max-height: 4rem"
             />
-            {{ recipe.name }} - Ingredients</div>
+            {{ recipe.name }} - Details</div>
             <div class="col-2" id="recipebtn">
             <button
             mat-raised-button
             id="reciperemovebtn"
             color="warn"
             (click)="deleteRecipe(recipe.id)"
-            >Remove Recipe</button>
+            >Remove Project</button>
           </div>
             <mat-selection-list #recipeingredients>
               <mat-list-option
@@ -143,3 +143,5 @@
 </div>
 </div>
 <hr>
+<h4>Your Profile</h4>
+<accordion></accordion>

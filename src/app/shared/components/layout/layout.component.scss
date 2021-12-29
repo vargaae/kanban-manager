@@ -1,0 +1,238 @@
+/* ANDRAS VARGA's PORTFOLIO PROJECTS DESIGN */
+:host {
+  $headingFontFamily: var(--heading-font-family);
+  $welcomeHeadingFontFamily: var(--slantedText);
+  $primaryTextColor: var(--primary-text-color);
+  $textFontFamily: var(--text-font-family);
+  $headingSecColor: var(--heading-sec-color);
+  $secTextColor: var(--secondary-text-color);
+  $projectBgColor: var(--bg-primary-color);
+  font-size: 14px;
+  color: #333;
+  box-sizing: border-box;
+  --primaryColor: #d7e8ba;
+  --secondaryColor: #437f97;
+  --mainDark: #3a3e3b;
+  --mainWhite: #fff;
+  --mainGrey: #e5e5e5;
+  --mainTransition: all 0.3s linear;
+  --letterSpacing: 0.5rem;
+  $footerSpace: 1.3rem;
+  // TODO: clean above and below
+  box-sizing: border-box;
+
+  @media all and (max-width: 600px) {
+    .container {
+      padding: 0 0.5rem;
+    }
+  }
+
+  section {
+    /* Scroll Snap */
+    scroll-snap-align: center;
+  }
+
+  /* helper/utility classes */
+  .clearfix::after,
+  .clearfix::before {
+    content: "";
+    clear: both;
+    display: table;
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  .text-white {
+    color: var(--mainWhite);
+  }
+
+  .text-center {
+    text-align: center;
+  }
+
+  .text-primary {
+    color: var(--primaryColor);
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin: 8px 0;
+  }
+
+  .underline {
+    width: 8rem;
+    height: 0.25rem;
+    margin-bottom: 1.25rem;
+    background: $secTextColor;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .btn {
+    background-color: transparent;
+    margin: 5rem auto;
+    font-size: var(--f-md);
+    border-radius: 4px;
+    font-family: var(--text-font-family);
+    line-height: 1;
+    text-decoration: none;
+    cursor: pointer;
+    border: 2px solid $secTextColor;
+    background: transparent;
+    padding: 0.7rem;
+    color: $secTextColor;
+    a {
+      text-align: center;
+    }
+    :hover {
+      cursor: pointer;
+    }
+  }
+
+  .comp-container {
+    padding: 5rem clamp(50px, 10vw, 15vw);
+  }
+
+  .comp {
+    padding: 0;
+    margin: 0px auto;
+    max-width: 1000px;
+    position: relative;
+  }
+
+  .icons-container {
+    width: 40px;
+    position: fixed;
+    bottom: 0px;
+    left: 40px;
+    right: auto;
+    z-index: 10;
+  }
+
+  .ficon {
+    font-size: 20px;
+    opacity: 0.9;
+    transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
+  }
+  .ficon:hover {
+    opacity: 1;
+    color: var(--secondary-text-color);
+    height: 35px;
+  }
+
+  ul.social-links {
+    display: flex;
+    flex-direction: column;
+    -moz-box-align: center;
+    align-items: center;
+    margin: 0px;
+    padding: 0px;
+    list-style: outside none none;
+
+    li {
+      margin: 10px;
+
+      a {
+        color: var(--heading-sec-color);
+      }
+    }
+  }
+
+  .social-links::after {
+    content: "";
+    display: block;
+    width: 1px;
+    height: 90px;
+    margin: 0px auto;
+    background-color: var(--heading-sec-color);
+  }
+
+  @media all and (max-width: 768px) {
+    .comp {
+      padding: 0;
+    }
+  }
+
+  @media all and (max-width: 900px) {
+    .icons-container {
+      display: none;
+    }
+  }
+
+  /* my projects */
+
+  .projects {
+    background: var(--mainDark);
+    min-height: 105vh;
+    padding: 4rem 5rem 5rem;
+  }
+
+  /* end of my projects */
+
+  .bannerdesign {
+    position: relative;
+    text-align: center;
+
+    .textbox {
+      box-sizing: border-box;
+      padding: 25px;
+
+      h1 {
+        text-align: center;
+      }
+
+      p {
+        text-align: justify;
+      }
+
+      button {
+        margin: 16px 0;
+      }
+    }
+  }
+
+  .features {
+    padding: 0.5rem;
+
+    .row {
+      border-radius: 5px;
+      .cell {
+        padding: 8px;
+
+        .content {
+          width: 100%;
+          height: 100%;
+          padding: 16px;
+          text-align: center;
+          box-sizing: border-box;
+          border-radius: 5px;
+
+          .text {
+            padding: 16px;
+          }
+
+          .icon {
+            $size: 32px;
+            font-size: $size;
+            width: $size * 1.5; // Makes sure having room to center larger icons
+            height: $size;
+            line-height: $size;
+            border-radius: 50%;
+            border: 1px solid currentColor;
+            box-sizing: border-box;
+            text-align: center;
+            vertical-align: middle;
+            color: var(--secondary-text-color);
+            text-shadow: 5px 5px 1px #437f97;
+          }
+        }
+      }
+    }
+  }
+}

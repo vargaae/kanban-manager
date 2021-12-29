@@ -86,7 +86,7 @@ export class RecipeEditComponent implements OnInit, OnDestroy {
       new FormGroup({
         name: new FormControl(null, Validators.required),
         measure: new FormControl(null, Validators.required),
-        amount: new FormControl(null, Validators.required),
+        // amount: new FormControl(null, Validators.required),
       })
     );
   }
@@ -104,7 +104,7 @@ export class RecipeEditComponent implements OnInit, OnDestroy {
     ingredientSets.forEach(i => {
       formArray.push(this.fb.group({
         name: i.name,
-        amount: i.amount,
+        // amount: i.amount,
         measure: i.measure
       }));
     });

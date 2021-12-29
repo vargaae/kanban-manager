@@ -22,7 +22,7 @@ export class AuthService {
     ) {
       this.user$ = afAuth.authState;
       afAuth.authState
-      .subscribe(x => console.log(x));
+      // .subscribe(x => console.log(x));
   }
 
 loginWithGoogle() {

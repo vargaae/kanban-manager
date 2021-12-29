@@ -16,6 +16,10 @@ $primary-color: grey;
 
 /* GENERAL STYLES */
 
+nav {
+  background-color: #005486;
+}
+
 a, p, h4, .mat-button {
   font-family: 'Montserrat', sans-serif;
   font-weight: 500;
@@ -89,7 +93,7 @@ color: transparent;
 font-weight: 900;
 }
 #profilebtn {
-color: black;
+color: white;
 font-weight: 700;
 }
 
