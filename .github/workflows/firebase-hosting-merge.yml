@@ -15,6 +15,6 @@ jobs:
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           repoToken: '${{ secrets.GITHUB_TOKEN }}'
-          firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_GASTROAPPLICATION }}'
+          firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_KANBAN_FIRE_WORKSHOP_F3FA2 }}'
           channelId: live
-          projectId: gastroapplication
+          projectId: kanban-fire-workshop-f3fa2
