@@ -7,6 +7,8 @@ export class Developer {
   name?: string;
   category?: string;
   imagePath?: string;
+  phone?: string;
+  email?: string;
   description?: string;
   preparation?: string;
   lastUpdate?: string;

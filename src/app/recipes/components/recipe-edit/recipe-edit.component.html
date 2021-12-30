@@ -17,7 +17,7 @@
             color="warn"
             (click)="deleteRecipe()"
           >
-            Delete Recipe
+            Delete Project
           </button>
           <button
             type="button"
@@ -65,7 +65,7 @@
       <div class="row">
         <div class="col-xs-12">
           <div class="form-group">
-            <label for="lastUpdate">Recipe Saved:</label>
+            <label for="lastUpdate">Project Start / Project Saved:</label>
             <input
               type="text"
               id="lastUpdate"
@@ -93,7 +93,7 @@
       <div class="row">
         <div class="col-xs-12">
           <div class="form-group">
-            <label for="preparation">Preparation</label>
+            <label for="preparation">Details</label>
             <textarea
               type="text"
               id="preparation"
@@ -124,13 +124,13 @@
                       {{ m.payload.val().name }}
                     </option>
                   </select>
-                  <label for="unitSelect">Unit</label>
+                  <label for="unitSelect">Type</label>
                 </div>
               </div>
               <div class="col-6">
                 <div class="form-floating">
                   <input formControlName="name" type="text" class="form-control" id="nameFloatingInputGrid">
-                  <label for="nameFloatingInputGrid">Skill</label>
+                  <label for="nameFloatingInputGrid">Issue</label>
                 </div>
               </div>
               <div class="col-2">
@@ -157,7 +157,7 @@
                 style="font-family: Lekton;"
                 (click)="onAddIngredient()"
               ><mat-icon>add_circle_outline</mat-icon>
-                Add Ingredient
+                Add Issue
               </button>
             </div>
           </div>
@@ -180,7 +180,7 @@
             color="warn"
             (click)="deleteRecipe()"
           >
-            Delete Recipe
+            Delete Project
           </button>
           <button
             type="button"

@@ -4,18 +4,15 @@
     routerLinkActive="active"
     class="list-group-item clearfix"
   >
-    <div class="pull-left">
+    <div class="float-start">
       <h4 class="list-group-item-heading">{{ developer.name }}</h4>
       <span class="description">{{ developer.description }}</span>
+      <span class="entry">Entry date: {{ developer.lastUpdate | date }}</span>
     </div>
-    <span class="pull-right">
-      <img
-        [src]="developer.imagePath"
-        alt="{{ developer.name }}"
-        class="img-fluid"
-        style="max-height: 50px"
-      />
-    </span>
-    {{ developer.lastUpdate | date }}
+    <div
+      [style.backgroundImage]="'url(' + developer.imagePath + ')'"
+      class="thumbnail float-end"
+      alt="{{ developer.name }}"
+    ></div>
   </a>
 </ng-container>

@@ -6,6 +6,18 @@
   text-overflow: ellipsis;
 }
 
+.entry {
+  margin-top: .3rem;
+}
+
+.thumbnail {
+  margin-top: .2rem;
+  width: 80px;
+  height: 80px;
+  border-radius: 100%;
+  background-size: cover;
+}
+
 .list-group-item.active {
   background-color: #005486;
 }

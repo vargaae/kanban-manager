@@ -4,11 +4,12 @@
     routerLinkActive="active"
     class="list-group-item clearfix"
   >
-    <div class="pull-left">
+    <div class="float-start">
       <h4 class="list-group-item-heading">{{ recipe.name }}</h4>
       <span class="description">{{ recipe.description }}</span>
+      <span class="entry">Start date: {{ recipe.lastUpdate | date }}</span>
     </div>
-    <span class="pull-right">
+    <span class="float-end">
       <img
         [src]="recipe.imagePath"
         alt="{{ recipe.name }}"
@@ -16,6 +17,5 @@
         style="max-height: 50px"
       />
     </span>
-    {{ recipe.lastUpdate | date }}
   </a>
 </ng-container>

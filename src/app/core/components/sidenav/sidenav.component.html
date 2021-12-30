@@ -1,0 +1,31 @@
+<ul>
+  <li class="nav-item">
+    <button mat-button routerLink="/recipes">
+      <mat-icon>perm_media</mat-icon>
+      <a routerLinkActive="active" class="nav-link" aria-current="page"
+        > Projects</a
+      >
+    </button>
+  </li>
+  <li class="nav-item">
+    <button mat-button routerLink="/developers">
+      <mat-icon>people_alt</mat-icon>
+      <a routerLinkActive="active" class="nav-link" aria-current="page"
+        >Developers</a
+      >
+    </button>
+  </li>
+</ul>
+<p class="info-text float-end" *ngIf="showFiller">
+  This is a simplified Kanban Work Manager Application built with Angular.<br />
+  <strong>In the Administration tools menu you can edit your projects' and
+  employees' files.</strong>
+</p>
+<button
+  (click)="showFiller = !showFiller"
+  mat-button
+  class="infobtn"
+  aria-label="Information button"
+>
+  <mat-icon>info</mat-icon>
+</button>

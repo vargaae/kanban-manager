@@ -22,3 +22,39 @@ a {
   text-decoration: none;
   color: black;
 }
+
+.sidebar-container {
+  // width: 500px;
+  // height: 300px;
+  // border: 1px solid rgba(0, 0, 0, 0.5);
+}
+
+.sidebar {
+  background: #fff;
+  padding: 20px;
+}
+
+.layout-sidenav-content {
+  background: #fff;
+  // display: flex;
+  // height: 100%;
+  // align-items: center;
+  // justify-content: center;
+}
+
+.menu-title {
+  font-weight: 600;
+}
+
+$breakpoint-xsreswidth: 635px;
+@media (max-width: $breakpoint-xsreswidth) {
+  .fullsize {
+    display: none;
+  }
+}
+$breakpoint-smreswidth: 640px;
+@media (min-width: $breakpoint-smreswidth) {
+  .smallsize {
+    display: none;
+  }
+}

@@ -30,12 +30,17 @@ Fonts
 }
 
 .img-fluid {
-  height: 20rem;
+  max-height: 15rem;
+}
+
+.title {
+  padding-top: 0.8rem;
+  font-weight: 700;
 }
 
 $breakpoint-smresheight: 480px;
 @media (max-height: $breakpoint-smresheight) {
   .img-fluid {
-    max-height: 15rem;
+    max-height: 10rem;
   }
 }

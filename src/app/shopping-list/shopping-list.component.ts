@@ -32,8 +32,9 @@ export class ShoppingListComponent implements OnInit, OnDestroy {
   items: Observable<any>;
 
   recipeSubscription: Subscription;
+  developerSubscription: Subscription;
   recipes: Recipe[] = [];
-
+  developers: Recipe[] = [];
 
   onEditItem(
     ingredientId: string,
@@ -42,8 +43,6 @@ export class ShoppingListComponent implements OnInit, OnDestroy {
     ingredientUnit: string,
     RecipeId: string
   ) {
-    // TODO: Click on recipe Ingredient, then initialize RecipeEditMode
-    console.log(ingredientId, RecipeId);
     this.slService.startedEditing.next(ingredientId);
     this.slService.startedEditingRecipe.next(ingredientId);
     this.editMode = true;
@@ -69,6 +68,9 @@ export class ShoppingListComponent implements OnInit, OnDestroy {
     this.recipeSubscription = this.slService
       .getAllRecipesShoppingListItems()
       .subscribe((recipes) => (this.recipes = recipes));
+    this.developerSubscription = this.slService
+      .getAllDevelopersNotePadListItems()
+      .subscribe((developers) => (this.developers = developers));
 
     this.ingredients$ = this.slService.getAll();
     this.unit$ = this.measureService.getAll();
@@ -114,9 +116,13 @@ export class ShoppingListComponent implements OnInit, OnDestroy {
   deleteRecipe(recipeId: string) {
     this.slService.deleteRecipeFromShoppingList(recipeId);
   }
+  removeDeveloper(devId: string) {
+    this.slService.removeDeveloperFromNotePad(devId);
+  }
 
   ngOnDestroy() {
     this.recipeSubscription.unsubscribe();
+    this.developerSubscription.unsubscribe();
     this.slSubscription.unsubscribe();
     this.editSubscription.unsubscribe();
   }

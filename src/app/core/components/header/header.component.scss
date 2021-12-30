@@ -8,11 +8,10 @@ Fonts
 
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans");
 @import url("https://fonts.googleapis.com/css2?family=Cormorant:wght@500");
-@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Lekton:wght@700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lekton:wght@700&display=swap");
 
 $primary-color: grey;
-
 
 /* GENERAL STYLES */
 
@@ -20,14 +19,21 @@ nav {
   background-color: #005486;
 }
 
-a, p, h4, .mat-button {
-  font-family: 'Montserrat', sans-serif;
+a,
+p,
+h4,
+.mat-button {
+  font-family: "Montserrat", sans-serif;
   font-weight: 500;
 }
 
 $breakpoint-xsreswidth: 500px;
 @media (max-width: $breakpoint-xsreswidth) {
-  a, p, h4, .mat-button, .nav-link {
+  a,
+  p,
+  h4,
+  .mat-button,
+  .nav-link {
     font-size: 0.6rem;
   }
   img {
@@ -36,7 +42,11 @@ $breakpoint-xsreswidth: 500px;
 }
 $breakpoint-smreswidth: 640px;
 @media (min-width: $breakpoint-smreswidth) {
-  a, p, h4, .mat-button, .nav-link {
+  a,
+  p,
+  h4,
+  .mat-button,
+  .nav-link {
     font-size: 1rem;
   }
 }
@@ -86,19 +96,20 @@ h4 {
 }
 
 .nav-link.dropdown-toggle {
-color: transparent;
+  color: transparent;
 }
 .nav-link.dropdown-toggle:hover {
-color: transparent;
-font-weight: 900;
-}
-#profilebtn {
-color: white;
-font-weight: 700;
+  color: transparent;
+  font-weight: 900;
 }
 
 .dropdown-item {
   text-align: right;
+}
+
+.profilename {
+  color: white;
+  font-weight: 700;
 }
 
 .profile-card {
@@ -107,4 +118,19 @@ font-weight: 700;
   margin-top: 0.5rem;
   padding-right: 0.5rem;
   text-align: right;
+}
+
+$breakpoint-tablet: 768px;
+@media (max-width: $breakpoint-tablet) {
+  .profilename {
+    display: none;
+  }
+
+  .profile-card {
+    width: 10rem;
+    height: 8rem;
+    margin-top: 0.5rem;
+    padding-right: 0.5rem;
+    text-align: right;
+  }
 }

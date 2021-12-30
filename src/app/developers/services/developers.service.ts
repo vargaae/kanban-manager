@@ -63,7 +63,7 @@ export class DeveloperService {
     return this.db.object('/developers/' + developerId).remove();
   }
 
-  addDevelopersToShoppingList(developerId, developer: Developer = {} as Developer) {
-    return this.db.object('/developersShoppingList/' + developerId).set(developer);
+  addDevelopersToNotePad(developerId, developer: Developer = {} as Developer) {
+    return this.db.object('/devsNotePadList/' + developerId).set(developer);
   }
 }

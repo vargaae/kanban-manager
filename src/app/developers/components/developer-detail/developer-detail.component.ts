@@ -32,8 +32,8 @@ export class DeveloperDetailComponent implements OnInit, OnDestroy {
     });
   }
 
-  onAddDevelopersToShoppingList() {
-    this.developerService.addDevelopersToShoppingList(this.id, this.developer);
+  onAddDevelopersToNotePad() {
+    this.developerService.addDevelopersToNotePad(this.id, this.developer);
   }
 
   onEditDeveloper() {

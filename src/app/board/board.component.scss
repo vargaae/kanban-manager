@@ -1,0 +1,154 @@
+/* ANDRAS VARGA's KANBAN WORK MANAGER APPLICATION DESIGN */
+
+/*
+===============
+Fonts
+===============
+*/
+
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans");
+@import url("https://fonts.googleapis.com/css2?family=Cormorant:wght@500");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lekton:wght@700&display=swap");
+
+/* GENERAL STYLES */
+
+h3 {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+}
+
+mat-toolbar {
+  border-radius: 20px 0 0;
+}
+
+mat-toolbar > span {
+  margin-left: 10px;
+}
+
+.section {
+  background: rgb(255, 251, 230);
+  background: linear-gradient(
+    0deg,
+    rgba(255, 251, 230, 1) 93%,
+    rgba(200, 230, 201, 1) 100%
+  );
+  border-radius: 0 0 0.5rem 0.5rem;
+  padding: 0 24px;
+}
+
+.content-wrapper {
+  max-width: 1400px;
+  margin: auto;
+  background: rgb(255, 251, 230);
+  background: linear-gradient(
+    0deg,
+    rgba(255, 251, 230, 1) 0%,
+    rgba(255, 255, 255, 1) 100%
+  );
+}
+
+.container-wrapper {
+  display: flex;
+  justify-content: space-around;
+}
+
+.container {
+  width: 400px;
+  margin: 0 25px 25px 0;
+}
+
+.list {
+  border: solid 1px #ccc;
+  min-height: 60px;
+  border-radius: 4px;
+}
+
+.app-new-task {
+  margin-bottom: 30px;
+}
+
+.empty-label {
+  font-size: 2em;
+  padding-top: 10px;
+  text-align: center;
+  opacity: 0.2;
+}
+
+/* The Angular CDK provides us with CSS class names we can use to fix the dragging problem: */
+
+.cdk-drag-animating {
+  transition: transform 250ms;
+}
+
+.cdk-drag-placeholder {
+  opacity: 0;
+}
+
+.developer-list,
+.project-list {
+  font-weight: 400;
+  padding: 0.1rem;
+}
+
+@media print {
+  .printit {
+    display: table-header-group;
+  }
+  .printit {
+    display: table-footer-group;
+  }
+
+  #recipe {
+    font-family: "Montserrat", sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    padding-left: 0;
+  }
+  img {
+    height: 50px;
+  }
+
+  .mat-list-option {
+    font-size: 0.8rem;
+  }
+
+  .header,
+  form,
+  button {
+    display: none;
+  }
+
+  body {
+    margin: 0;
+  }
+}
+
+$breakpoint-tablet: 768px;
+@media (max-width: $breakpoint-tablet) {
+  .content-wrapper {
+    display: flex;
+    flex-direction: column;
+    // max-width: 1400px;
+    margin: 1rem;
+  }
+
+  .container-wrapper {
+    display: flex;
+    flex-direction: column;
+    // justify-content: space-around;
+  }
+
+  .container {
+    width: 80vw;
+    margin: 0;
+  }
+
+  h2 {
+    margin-top: .5rem;
+  }
+
+  .printbtn {
+    display: none;
+  }
+}

@@ -17,8 +17,8 @@
           <a
             ngbDropdownItem
             class="dropdown-item"
-            (click)="onAddDevelopersToShoppingList()"
-            >Add Developer's Details To the NotePad</a
+            (click)="onAddDevelopersToNotePad()"
+            >Add Developer's Information To the NotePad</a
           >
         </li>
       </ng-container>
@@ -33,7 +33,14 @@
 </div>
 <hr />
 <div class="row">
-  <div class="col">
+  <div class="col float-start">
+    <h2 style="padding-bottom: 1rem;">{{ developer.name }}</h2>
+    <p class="title">phone: {{ developer.phone }}
+    </p>
+    <p class="title">email: {{ developer.email }}
+    </p>
+  </div>
+  <div class="col float-end">
     <img
       [src]="developer.imagePath"
       alt="{{ developer.name }}"
@@ -43,32 +50,24 @@
 </div>
 <div class="row">
   <div class="col">
-    <h1>{{ developer.name }}</h1>
-  </div>
-</div>
-<div class="row">
-  <div class="col"></div>
-</div>
-<div class="row">
-  <div class="col">
-    <strong>Work</strong><br />
+    <p class="title">Seniority level</p>
       <mat-card>
     {{ developer.description }}
     </mat-card>
-    <br /><br />
-    <strong>Role</strong><br />
+
+    <p class="title">Position</p>
     <mat-card class="justified">
         {{ developer.preparation }}
       </mat-card>
-    <br />
+
   </div>
 </div>
 <div class="row">
   <div class="col">
-    <strong>Skills</strong><br />
+    <p class="title">Skills</p>
     <mat-card><mat-selection-list #ingredients [multiple]="false">
       <mat-list-option *ngFor="let ingredient of developer.ingredients" style="cursor: default;">
-        {{ ingredient.measure }} of
+        <!-- {{ ingredient.measure }}: -->
         {{ ingredient.name }}
       </mat-list-option>
     </mat-selection-list></mat-card>

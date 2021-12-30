@@ -1,8 +1,36 @@
 <app-header></app-header>
-<div class="container">
-  <div class="row">
-    <div class="col-md-12">
-      <router-outlet></router-outlet>
+<ng-container class="full">
+  <mat-drawer-container class="full sidebar-container" autosize>
+    <mat-drawer #drawer class="sidebar" mode="side">
+      <p class="menu-title">
+        <button
+          type="button"
+          mat-button
+          (click)="drawer.toggle()"
+          aria-label="Sidenav toggle button"
+        >
+          <mat-icon>difference</mat-icon> Editable files
+        </button>
+      </p>
+      <app-sidenav></app-sidenav>
+    </mat-drawer>
+
+    <div class="layout-sidenav-content">
+      <button
+        type="button"
+        mat-button
+        (click)="drawer.toggle()"
+        aria-label="Sidenav toggle button"
+      >
+        <mat-icon>admin_panel_settings</mat-icon> Administrator tools
+      </button>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <router-outlet></router-outlet>
+          </div>
+        </div>
+      </div>
     </div>
-  </div>
-</div>
+  </mat-drawer-container>
+</ng-container>

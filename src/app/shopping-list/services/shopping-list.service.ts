@@ -54,6 +54,21 @@ export class ShoppingListService {
       );
   }
 
+  getAllDevelopersNotePadListItems() {
+    return this.db
+      .list<Ingredient>('/devsNotePadList')
+      .snapshotChanges()
+      .pipe(
+        map((changes) =>
+          changes.map((i) => {
+            const data = i.payload.val() as Ingredient;
+            const id = i.payload.key;
+            return { id, ...data };
+          })
+        )
+      );
+  }
+
   get(ingredientId) {
     return this.db
       .object<Ingredient[]>('/ingredients/' + ingredientId)
@@ -73,6 +88,9 @@ export class ShoppingListService {
 
   deleteRecipeFromShoppingList(recipeId) {
     return this.db.object('/recipesShoppingList/' + recipeId).remove();
+  }
+  removeDeveloperFromNotePad(devId) {
+    return this.db.object('/devsNotePadList/' + devId).remove();
   }
   deleteRecipeIngredientFromShoppingList(recipeId, ingredientIndex) {
     return this.db.object('/recipesShoppingList/' + recipeId + '/ingredients/' + ingredientIndex).remove();

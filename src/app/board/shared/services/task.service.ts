@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { AngularFireDatabase } from '@angular/fire/database';
 import { map } from 'rxjs/operators';
+import { Developer } from 'src/app/developers/models/developers.model';
 
 import { Bug } from '../models/bug';
 
@@ -11,12 +12,18 @@ export class TaskService {
   constructor(private db: AngularFireDatabase) {}
 
   create(task: Bug) {
-    return this.db.list('/tasks').push(task);
+    return this.db.list('/todotasks').push(task);
   }
 
-  getAllBugs() {
+  getAllDevelopers() {
     return this.db
-      .list<Bug>('/tasks')
+      .list('developers', (ref) => ref.orderByChild('name'))
+      .snapshotChanges();
+  }
+
+  getAllProjects() {
+    return this.db
+      .list<Bug>('/recipes')
       .snapshotChanges()
       .pipe(
         map((changes) =>
@@ -27,28 +34,6 @@ export class TaskService {
           })
         )
       );
-  }
-
-  getAllDoneBugs() {
-    return this.db
-      .list<Bug>('/donetasks')
-      .snapshotChanges()
-      .pipe(
-        map((changes) =>
-          changes.map((i) => {
-            const data = i.payload.val() as Bug;
-            const id = i.payload.key;
-            return { id, ...data };
-          })
-        )
-      );
-  }
-
-  getAll() {
-    return this.db.list(
-      'tasks',
-      ref => ref.orderByChild('title')
-    ).snapshotChanges();
   }
 
   get(taskId: string) {
@@ -62,4 +47,5 @@ export class TaskService {
   delete(taskId: string) {
     return this.db.object('/tasks/' + taskId).remove();
   }
+
 }

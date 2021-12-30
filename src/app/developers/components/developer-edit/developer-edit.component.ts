@@ -60,6 +60,8 @@ export class DeveloperEditComponent implements OnInit, OnDestroy {
   onSubmit() {
     const newDeveloper = new Developers(
       this.developerForm.value['name'],
+      this.developerForm.value['phone'],
+      this.developerForm.value['email'],
       this.developerForm.value['description'],
       this.developerForm.value['preparation'],
       this.developerForm.value['imagePath'],
@@ -85,7 +87,7 @@ export class DeveloperEditComponent implements OnInit, OnDestroy {
     (<FormArray>this.developerForm.get('ingredients')).push(
       new FormGroup({
         name: new FormControl(null, Validators.required),
-        measure: new FormControl(null, Validators.required),
+        // measure: new FormControl(null, Validators.required),
         // amount: new FormControl(null, Validators.required),
       })
     );
@@ -105,7 +107,7 @@ export class DeveloperEditComponent implements OnInit, OnDestroy {
       formArray.push(this.fb.group({
         name: i.name,
         // amount: i.amount,
-        measure: i.measure
+        // measure: i.measure
       }));
     });
 
@@ -115,6 +117,8 @@ export class DeveloperEditComponent implements OnInit, OnDestroy {
   private initForm() {
     let developerName = '';
     let developerImagePath = '';
+    let developerPhone = '';
+    let developerEmail = '';
     let developerDescription = '';
     let developerPreparation = '';
     let developerIngredients = new FormArray([]);
@@ -124,6 +128,8 @@ export class DeveloperEditComponent implements OnInit, OnDestroy {
       name: new FormControl(developerName, Validators.required),
       imagePath: new FormControl(developerImagePath, Validators.required),
       description: new FormControl(developerDescription, Validators.required),
+      phone: new FormControl(developerPhone, Validators.required),
+      email: new FormControl(developerEmail, Validators.required),
       preparation: new FormControl(developerDescription, Validators.required),
       ingredients: developerIngredients,
       lastUpdate: new FormControl(lastUpdate, Validators.required)
@@ -141,6 +147,8 @@ export class DeveloperEditComponent implements OnInit, OnDestroy {
 
       developerName = this.developer.name;
       developerImagePath = this.developer.imagePath;
+      developerDescription = this.developer.phone;
+      developerDescription = this.developer.email;
       developerDescription = this.developer.description;
       developerPreparation = this.developer.preparation;
       lastUpdate = new Date().toLocaleString();
@@ -148,7 +156,7 @@ export class DeveloperEditComponent implements OnInit, OnDestroy {
   }
 
   deleteDeveloper() {
-    if (!confirm('Are you sure you want to delete this developer?')) return;
+    if (!confirm("Are you sure you want to delete this developer's file?")) return;
 
     this.developerService.delete(this.id);
     this.router.navigate(['/developers']);

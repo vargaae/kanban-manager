@@ -1,19 +1,29 @@
+<mat-toolbar color="primary">
+  <mat-icon>local_fire_department</mat-icon>
+  <span>Kanban Work Manager</span>
+</mat-toolbar>
 <div class="container">
-<div class="row">
-  <div class="col-12">
-    <hr />
-    <h3 class="printit">NotePad
-      <button mat-button type="button" onClick="window.print()" style="float: right;">
-        <mat-icon>print</mat-icon>
-      </button>
-    </h3>
-    <hr />
-    <form
-      #f="ngForm"
-      (ngSubmit)="onSubmitIngredient(f.value)"
-      class="shopping-list-form"
-    >
-      <!-- <mat-form-field class="shopping-list-item-amount" appearance="outline">
+  <div class="row">
+    <div class="col-12">
+      <hr />
+      <h3 class="printit">
+        NotePad
+        <button
+          mat-button
+          type="button"
+          onClick="window.print()"
+          style="float: right"
+        >
+          <mat-icon>print</mat-icon>
+        </button>
+      </h3>
+      <hr />
+      <form
+        #f="ngForm"
+        (ngSubmit)="onSubmitIngredient(f.value)"
+        class="shopping-list-form"
+      >
+        <!-- <mat-form-field class="shopping-list-item-amount" appearance="outline">
         <mat-label for="amount">Amount</mat-label>
         <input
           matInput
@@ -37,111 +47,171 @@
           >
         </mat-error>
       </mat-form-field> -->
-      <mat-form-field class="shopping-list-item-unit" appearance="outline">
-        <mat-label>Type of Task</mat-label>
-        <mat-select
-          [(ngModel)]="ingredient.measure"
-          name="measure"
-          #measure="ngModel"
-          required
-          id="measure"
+        <mat-form-field
+          class="shopping-list-item-unit"
+          appearance="outline"
+          style="width: 10rem"
         >
-          <mat-option *ngFor="let u of unit$ | async" [value]="u.key">
-            {{ u.payload.val().name }}
-          </mat-option>
-        </mat-select>
-      </mat-form-field>
-      <mat-form-field class="shopping-list-item-name" appearance="outline">
-        <input
-          matInput
-          [(ngModel)]="ingredient.name"
-          name="name"
-          #name="ngModel"
-          required
-          minlength="3"
-          id="name"
-          type="text"
-          placeholder="Ingredient's name"
-        />
-        <mat-label for="name">Task</mat-label>
-        <mat-error *ngIf="name.touched && !name.valid">
-          <mat-error *ngIf="name.errors?.required"
-            >Task's name is required.</mat-error
+          <mat-label>Type of Issue</mat-label>
+          <mat-select
+            [(ngModel)]="ingredient.measure"
+            name="measure"
+            #measure="ngModel"
+            required
+            id="measure"
           >
-          <mat-error *ngIf="name.errors?.minlength"
-            >Task's name should be minimum
-            {{ name.errors?.minlength.requiredLength }} characters.</mat-error
-          >
-        </mat-error>
-      </mat-form-field>
-      <p>
-        <button mat-raised-button color="primary">
-          {{ editMode ? "Update Item" : "Add New Item" }}
-        </button>
+            <mat-option *ngFor="let u of unit$ | async" [value]="u.key">
+              {{ u.payload.val().name }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+        <mat-form-field class="shopping-list-item-name" appearance="outline">
+          <input
+            matInput
+            [(ngModel)]="ingredient.name"
+            name="name"
+            #name="ngModel"
+            required
+            minlength="3"
+            id="name"
+            type="text"
+            placeholder="Ingredient's name"
+          />
+          <mat-label for="name">Issue</mat-label>
+          <mat-error *ngIf="name.touched && !name.valid">
+            <mat-error *ngIf="name.errors?.required"
+              >Task's name is required.</mat-error
+            >
+            <mat-error *ngIf="name.errors?.minlength"
+              >Task's name should be minimum
+              {{ name.errors?.minlength.requiredLength }} characters.</mat-error
+            >
+          </mat-error>
+        </mat-form-field>
+        <p>
+          <button mat-raised-button color="primary">
+            {{ editMode ? "Update Issue" : "Add New Issue" }}
+          </button>
 
-        <button mat-raised-button color="accent" (click)="onClear()">
-          {{ editMode ? "Write New Item" : "Clear" }}
-        </button>
-        <button
-          mat-raised-button
-          color="warn"
-          (click)="deleteIngredient()"
-          *ngIf="editMode"
-        >
-          Delete Item
-        </button>
-      </p>
-    </form>
-    <ng-container *ngIf="ingredients.length">
-    <mat-selection-list #shoppinglist>
-      <mat-divider></mat-divider>
-      <mat-list-option
-        *ngFor="let ingredient of ingredients"
-        (click)="onEditItem(ingredient.id, ingredient.name, ingredient.amount, ingredient.measure)"
-      >
-        <mat-icon matListIcon>add_circle_outline</mat-icon>
-            {{ ingredient.amount }}  {{ ingredient.measure }} of {{ ingredient.name }}
-      </mat-list-option>
-    </mat-selection-list>
-    <mat-divider style="margin-bottom: 0.8rem;"></mat-divider>
-  </ng-container>
-  <ng-container *ngIf="recipes.length">
-      <hr />
-    <h3>Chosen Projects</h3>
-    <hr />
-    <div *ngFor="let recipe of recipes" class="row">
-          <div class="col-10" id="recipe">
+          <button mat-raised-button color="accent" (click)="onClear()">
+            {{ editMode ? "Write New Issue" : "Clear" }}
+          </button>
+          <button
+            mat-raised-button
+            color="warn"
+            (click)="deleteIngredient()"
+            *ngIf="editMode"
+          >
+            Delete Item
+          </button>
+        </p>
+      </form>
+      <ng-container *ngIf="ingredients.length">
+        <mat-selection-list #shoppinglist>
+          <mat-divider></mat-divider>
+          <mat-list-option
+            *ngFor="let ingredient of ingredients"
+            (click)="
+              onEditItem(
+                ingredient.id,
+                ingredient.name,
+                ingredient.amount,
+                ingredient.measure
+              )
+            "
+          >
+            <mat-icon matListIcon>add_circle_outline</mat-icon>
+            ({{ ingredient.measure }}) {{ ingredient.name }}
+          </mat-list-option>
+        </mat-selection-list>
+        <mat-divider style="margin-bottom: 0.8rem"></mat-divider>
+      </ng-container>
+      <ng-container *ngIf="recipes.length">
+        <hr />
+        <h3>Chosen Projects</h3>
+        <hr />
+        <div *ngFor="let recipe of recipes" class="row cprojects">
+          <div class="col-10 project">
             <img
               [src]="recipe.imagePath"
               alt="{{ recipe.name }}"
               class="img-fluid"
-              style="max-height: 4rem"
             />
-            {{ recipe.name }} - Details</div>
-            <div class="col-2" id="recipebtn">
-            <button
-            mat-raised-button
-            id="reciperemovebtn"
-            color="warn"
-            (click)="deleteRecipe(recipe.id)"
-            >Remove Project</button>
+            {{ recipe.name }}
           </div>
-            <mat-selection-list #recipeingredients>
-              <mat-list-option
-                *ngFor="let ingredient of recipe.ingredients; let i = index"
-              >
-                <mat-icon matListIcon>add_circle_outline</mat-icon>
-                <span>
-                  <a>
-                    {{ ingredient.amount }} {{ ingredient.measure }} of {{ ingredient.name }}</a
-                  ><a class="amount"></a></span>
-              </mat-list-option>
-            </mat-selection-list>
-      </div>
-    </ng-container>
+          <div class="col-2 projectbtn">
+            <button
+              mat-raised-button
+              class="projectremovebtn"
+              color="warn"
+              (click)="deleteRecipe(recipe.id)"
+            >
+              Remove Project
+            </button>
+          </div>
+          <mat-selection-list #recipeingredients>
+            <mat-list-option
+              *ngFor="let ingredient of recipe.ingredients; let i = index"
+            >
+              <mat-icon matListIcon>add_circle_outline</mat-icon>
+              <span>
+                <a> ({{ ingredient.measure }}) {{ ingredient.name }}</a
+                ><a class="amount"></a
+              ></span>
+            </mat-list-option>
+          </mat-selection-list>
+        </div>
+      </ng-container>
+      <ng-container *ngIf="developers.length">
+        <hr />
+        <h3>Chosen Developers</h3>
+        <hr />
+        <div *ngFor="let dev of developers" class="row cprojects">
+          <div class="col-10 project">
+            <!-- <div
+            [style.backgroundImage]="'url(' + dev.imagePath + ')'"
+            class="thumbnail"
+            alt="{{ dev.name }}"
+          ></div> -->
+            <img [src]="dev.imagePath" alt="{{ dev.name }}" class="img-fluid" />
+            {{ dev.name }}
+          </div>
+          <div class="col-2 projectbtn">
+            <button
+              mat-raised-button
+              class="projectremovebtn"
+              color="warn"
+              (click)="removeDeveloper(dev.id)"
+            >
+              Remove Developer
+            </button>
+          </div>
+          <div class="devskills">
+            <div class="devskill">
+              {{ dev.description }} -> Skills:</div>
+            <div class="devskill" *ngFor="let ingredient of dev.ingredients; let i = index">
+              {{ ingredient.name }}
+            </div>
+          </div>
+          <div class="devskills">
+            <div class="devphone">
+              Phone:</div>
+            <div class="devskill">
+              {{ dev.phone }}
+            </div>
+          </div>
+          <div class="devskills">
+            <div class="devemail">
+              Email:</div>
+            <div class="devskill">
+              {{ dev.email }}
+            </div>
+          </div>
+        </div>
+      </ng-container>
+    </div>
   </div>
 </div>
-</div>
-<hr>
+<hr />
 <h4>Your Profile</h4>
 <accordion></accordion>

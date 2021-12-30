@@ -18,7 +18,7 @@
             ngbDropdownItem
             class="dropdown-item"
             (click)="onAddRecipesToShoppingList()"
-            >Add Project's Details To the NotePad</a
+            >Add Project To the NotePad</a
           >
         </li>
       </ng-container>
@@ -56,7 +56,7 @@
     {{ recipe.description }}
     </mat-card>
     <br /><br />
-    <strong>Tasks</strong><br />
+    <strong>Details</strong><br />
     <mat-card class="justified">
         {{ recipe.preparation }}
       </mat-card>
@@ -65,10 +65,10 @@
 </div>
 <div class="row">
   <div class="col">
-    <strong>Details</strong><br />
+    <strong>Issues</strong><br />
     <mat-card><mat-selection-list #ingredients [multiple]="false">
       <mat-list-option *ngFor="let ingredient of recipe.ingredients" style="cursor: default;">
-        {{ ingredient.amount }} {{ ingredient.measure }} of
+        ({{ ingredient.measure }})
         {{ ingredient.name }}
       </mat-list-option>
     </mat-selection-list></mat-card>
