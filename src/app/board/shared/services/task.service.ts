@@ -23,7 +23,7 @@ export class TaskService {
 
   getAllProjects() {
     return this.db
-      .list<Bug>('/recipes')
+      .list<Bug>('/projects')
       .snapshotChanges()
       .pipe(
         map((changes) =>

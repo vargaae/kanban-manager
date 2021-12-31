@@ -41,7 +41,7 @@ export class DeveloperDetailComponent implements OnInit, OnDestroy {
   }
 
   deleteDeveloper() {
-    if (!confirm('Are you sure you want to delete this recipe?')) return;
+    if (!confirm('Are you sure you want to delete this project?')) return;
 
     this.developerService.delete(this.id);
     this.router.navigate(['/developers']);

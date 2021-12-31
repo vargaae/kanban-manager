@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 
 @Component({
   // eslint-disable-next-line @angular-eslint/component-selector
-  selector: 'recipes',
+  selector: 'projects',
   templateUrl: './developers.component.html',
   styleUrls: ['./developers.component.scss'],
 })
