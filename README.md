@@ -1,28 +1,53 @@
-# KanbanManager
+# Kanban Work Manager
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.1.0.
+<div align="center">
+  <img alt="Application image" src="https://www.integrify.com/site/assets/files/2473/kanban-project-management.png" width="400" />
+</div>
+<br>
+<p align="center">
+  Project Management application for developers - built with <a href="https://angular.io/" target="_blank">Angular</a> and hosted with <a href="https://firebase.google.com/" target="_blank">Google Cloud Firebase</a>
+</p>
 
-## Development server
+## Project
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Kanban Manager Project has two main parts that work together, a Kanban Board with drag and drop planning board (Backlog, In Progress, Done sections), and NotePad, that is working as an issue tracker tool with several synchronised functions. The application has an administrator part, where we can edit the projects' and the developers' files with CRUD operations. Modularised, Lazy loaded structure. The whole application is connected and working with Cloud database.
+## Cloud Database
 
-## Code scaffolding
+This Project is using Cloud Firestore Database and Firebase Real-time Database.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## 🛠 Tools, Versions
+Angular 12, Typescript, Firebase, Angular Material and Bootstrap 5
 
-## Build
+## 🛠 Installation & Set Up
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+1. Install the Angular CLI
 
-## Running unit tests
+   ```sh
+   npm install -g @angular/cli
+   ```
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+3. Install dependencies
 
-## Running end-to-end tests
+   ```sh
+   npm i
+   ```
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+4. Start the development server
 
-## Further help
+   ```sh
+   ng serve & Navigate to `http://localhost:4200/
+   ```
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
-# gastroapp-project
+## 🚀 Building and Running for Production
+
+1. Generate a full static production build
+
+   ```sh
+   Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+   ```
+
+1. Preview the site as it will appear once deployed
+
+   ```sh
+   Go to the /dist directory and run command `ng serve`
+   ```
