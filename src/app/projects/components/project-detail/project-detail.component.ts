@@ -32,8 +32,8 @@ export class ProjectDetailComponent implements OnInit, OnDestroy {
     });
   }
 
-  onAddProjectsToShoppingList() {
-    this.projectService.addProjectsToShoppingList(this.id, this.project);
+  onAddProjectsToNotePad() {
+    this.projectService.addProjectsToNotePad(this.id, this.project);
   }
 
   onEditProject() {

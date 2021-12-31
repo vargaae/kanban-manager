@@ -63,7 +63,7 @@ export class ProjectService {
     return this.db.object('/projects/' + projectId).remove();
   }
 
-  addProjectsToShoppingList(projectId, project: Project = {} as Project) {
-    return this.db.object('/projectsShoppingList/' + projectId).set(project);
+  addProjectsToNotePad(projectId, project: Project = {} as Project) {
+    return this.db.object('/projectsNotePad/' + projectId).set(project);
   }
 }
