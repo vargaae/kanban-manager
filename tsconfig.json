@@ -3,6 +3,26 @@
   "compileOnSave": false,
   "compilerOptions": {
     "baseUrl": "./",
+    "paths": {
+      "shared/*":[
+        "/app/shared/*"
+      ],
+      "auth/*":[
+        "/app/auth/*"
+      ],
+      "board/*":[
+        "/app/board/*"
+      ],
+      "core/*":[
+        "/app/core/*"
+      ],
+      "developers/*":[
+        "/app/developers/*"
+      ],
+      "projects/*":[
+        "/app/projects/*"
+      ],
+    },
     "outDir": "./dist/out-tsc",
     "sourceMap": true,
     "declaration": false,

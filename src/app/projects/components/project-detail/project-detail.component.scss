@@ -1,0 +1,41 @@
+/* ANDRAS VARGA's KANBAN MANAGER APPLICATION DESIGN */
+
+/*
+===============
+Fonts
+===============
+*/
+
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans");
+@import url("https://fonts.googleapis.com/css2?family=Cormorant:wght@500");
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lekton:wght@700&display=swap');
+
+/* GENERAL STYLES */
+
+* {
+  font-family: 'Montserrat', sans-serif;
+}
+
+.mat-raised-button {
+  margin: 0.3rem;
+}
+
+.dropdown-menu {
+  background-color: #FFFBE6;
+}
+
+.justified {
+  text-align: justify;
+}
+
+.img-fluid {
+  height: 25rem;
+}
+
+$breakpoint-smresheight: 480px;
+@media (max-height: $breakpoint-smresheight) {
+  .img-fluid {
+    max-height: 20rem;
+  }
+}

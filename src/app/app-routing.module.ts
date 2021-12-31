@@ -7,34 +7,45 @@ import { NotFoundComponent } from './shared/components/not-found/not-found.compo
 const routes: Routes = [
   { path: '', component: HomeComponent },
   {
-    path: 'recipes',
+    path: 'projects',
     loadChildren: () =>
-      import('./recipes/recipes.module').then((value) => value.RecipesModule),
+      import('./projects/projects.module').then(
+        (value) => value.ProjectsModule
+      ),
   },
   {
     path: 'developers',
     loadChildren: () =>
-      import('./developers/developers.module').then((value) => value.DevelopersModule),
+      import('./developers/developers.module').then(
+        (value) => value.DevelopersModule
+      ),
   },
   {
     path: 'notepad',
     loadChildren: () =>
-      import('./shopping-list/shopping-list.module').then(
-        (value) => value.ShoppingListModule
+      import('./notepad/notepad.module').then(
+        (value) => value.NotePadModule
       ),
   },
-  { path: 'kanban-board', loadChildren: () => import('./board/board.module').then(m => m.BoardModule) },
+  {
+    path: 'kanban-board',
+    loadChildren: () =>
+      import('./board/board.module').then((m) => m.BoardModule),
+  },
   {
     path: 'login',
     loadChildren: () =>
       import('./auth/auth.module').then((value) => value.AuthModule),
   },
-  { path: '404', component: NotFoundComponent },
+  { path: '**', pathMatch: 'full', component: NotFoundComponent },
 ];
 
 @NgModule({
   imports: [
-    RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules, scrollPositionRestoration: 'enabled' }),
+    RouterModule.forRoot(routes, {
+      preloadingStrategy: PreloadAllModules,
+      scrollPositionRestoration: 'enabled',
+    }),
   ],
   exports: [RouterModule],
 })

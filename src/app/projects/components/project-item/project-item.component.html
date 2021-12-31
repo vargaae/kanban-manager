@@ -1,0 +1,21 @@
+<ng-container *ngFor="let project of projects">
+  <a
+    [routerLink]="['/projects/', project.id]"
+    routerLinkActive="active"
+    class="list-group-item clearfix"
+  >
+    <div class="float-start">
+      <h4 class="list-group-item-heading">{{ project.name }}</h4>
+      <span class="description">{{ project.description }}</span>
+      <span class="entry">Start date: {{ project.lastUpdate | date }}</span>
+    </div>
+    <span class="float-end">
+      <img
+        [src]="project.imagePath"
+        alt="{{ project.name }}"
+        class="img-fluid"
+        style="max-height: 50px"
+      />
+    </span>
+  </a>
+</ng-container>
