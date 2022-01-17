@@ -19,7 +19,7 @@
     "@angular/fire": "^6.1.5",
     "@angular/forms": "~13.1.2",
     "@angular/localize": "~13.1.2",
-    "@angular/material": "^12.2.0",
+    "@angular/material": "^13.1.2",
     "@angular/platform-browser": "~13.1.2",
     "@angular/platform-browser-dynamic": "~13.1.2",
     "@angular/router": "~13.1.2",
